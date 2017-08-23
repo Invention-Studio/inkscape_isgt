@@ -1,0 +1,6 @@
+name		ru
+charset		koi8-r
+special		- -*-
+soundslike	generic
+affix		ru
+affix-compress	true
