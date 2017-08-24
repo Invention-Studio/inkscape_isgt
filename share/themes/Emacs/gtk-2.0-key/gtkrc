@@ -1,113 +1,251 @@
-# GTK - The GIMP Toolkit
-# Copyright (C) 2002 Owen Taylor
-#
-# This library is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public
-# License as published by the Free Software Foundation; either
-# version 2 of the License, or (at your option) any later version.
-#
-# This library is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# Lesser General Public License for more details.
-#
-# You should have received a copy of the GNU Lesser General Public
-# License along with this library; if not, write to the
-# Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-# Boston, MA 02111-1307, USA.
+	include "/tmp/skl/Gimp.app/Contents/Resources/share/gimp/2.0/themes/Default/gtkrc"
 
-
-# Modified by the GTK+ Team and others 1997-2000.  See the AUTHORS
-# file for a list of people on the GTK+ Team.  See the ChangeLog
-# files for a list of changes.  These files are distributed with
-# GTK+ at ftp://ftp.gtk.org/pub/gtk/. 
-
-
-#
-# A keybinding set implementing emacs-like keybindings
-#
-
-#
-# Bindings for GtkTextView and GtkEntry
-#
-binding "gtk-emacs-text-entry"
+style "clearlooks-default"
 {
-  bind "<ctrl>b" { "move-cursor" (logical-positions, -1, 0) }
-  bind "<shift><ctrl>b" { "move-cursor" (logical-positions, -1, 1) }
-  bind "<ctrl>f" { "move-cursor" (logical-positions, 1, 0) }
-  bind "<shift><ctrl>f" { "move-cursor" (logical-positions, 1, 1) }
+  GtkMenuItem::selected_shadow_type = out
+  GtkWidget::interior_focus = 1
+  GtkButton::default_border = { 0, 0, 0, 0 }
+  GtkButton::default_outside_border = { 0, 0, 0, 0 }
+  GtkRange::trough_border = 0
 
-  bind "<alt>b" { "move-cursor" (words, -1, 0) }
-  bind "<shift><alt>b" { "move-cursor" (words, -1, 1) }
-  bind "<alt>f" { "move-cursor" (words, 1, 0) }
-  bind "<shift><alt>f" { "move-cursor" (words, 1, 1) }
+  GtkWidget::focus_padding = 0 
+ # GtkWidget::focus-padding         = 0
 
-  bind "<ctrl>a" { "move-cursor" (paragraph-ends, -1, 0) }
-  bind "<shift><ctrl>a" { "move-cursor" (paragraph-ends, -1, 1) }
-  bind "<ctrl>e" { "move-cursor" (paragraph-ends, 1, 0) }
-  bind "<shift><ctrl>e" { "move-cursor" (paragraph-ends, 1, 1) }
+  GtkPaned::handle_size = 5
 
-  bind "<ctrl>w" { "cut-clipboard" () }
-  bind "<ctrl>y" { "paste-clipboard" () }
+  GtkRange::slider_width = 12
+  GtkRange::stepper_size = 12 #toolbar arrows
+  GtkScrollbar::min_slider_length = 28
+  GtkCheckButton::indicator_size = 10
+  GtkMenuBar::internal-padding = 0
 
-  bind "<ctrl>d" { "delete-from-cursor" (chars, 1) }
-  bind "<alt>d" { "delete-from-cursor" (word-ends, 1) }
-  bind "<ctrl>k" { "delete-from-cursor" (paragraph-ends, 1) }
-  bind "<alt>backslash" { "delete-from-cursor" (whitespace, 1) }
+  GtkTreeView::expander_size = 12
+  GtkTreeView::odd_row_color = "#38393b"
+  GtkExpander::expander_size = 14
 
-  bind "<alt>space" { "delete-from-cursor" (whitespace, 1)
-                      "insert-at-cursor" (" ") }
-  bind "<alt>KP_Space" { "delete-from-cursor" (whitespace, 1)
-                         "insert-at-cursor" (" ")  }
+  xthickness = 1
+  ythickness = 1
+  
+    GtkOptionMenu::indicator-size    = { 5, 11 }
+  GtkOptionMenu::indicator-spacing = { 4, 3, 1, 1 }
 
-  #
-  # Some non-Emacs keybindings people are attached to
-  #
-  bind "<ctrl>u" {
-     "move-cursor" (paragraph-ends, -1, 0)
-     "delete-from-cursor" (paragraph-ends, 1)
+  GtkPaned::handle-size             = 4
+  GimpDock::default-height          = 200
+  GimpDock::font-scale              = 0.7500
+  GimpDockSeparator::height         = 4
+  GimpMenuDock::minimal-width       = 180
+  GimpMenuDock::menu-preview-size   = small-toolbar
+  GimpToolbox::tool-icon-size       = menu
+  GimpToolbox::button-relief        = none
+  GimpDockbook::tab-border          = 0
+  GimpDockbook::tab-icon-size       = menu
+  GimpColorNotebook::tab-border     = 0
+  GimpColorNotebook::tab-icon-size  = menu
+  GimpDockable::content-border      = 1
+  GimpEditor::content-spacing       = 1
+  GimpEditor::button-spacing        = 1
+  GimpEditor::button-icon-size      = menu
+  GimpDataEditor::minimal-height    = 60
+  GimpFrame::label-spacing          = 2
+  GtkDialog::content-area-border    = 0
+  GtkDialog::button-spacing         = 6
+  GtkDialog::action-area-border     = 10
+  GimpUnitComboBox::appears-as-list = 0
+  
+	font_name = "DejaVu Sans 8"
+
+  fg[NORMAL]        = "#c4c4c4" # normaler Text
+  fg[PRELIGHT]      = "#f3f3f3" # Text mouse-over
+  fg[ACTIVE]        = "#f3f3f3" # aktivirter Text Bsp: aktiver Checkboxtext
+  fg[SELECTED]      = "#f3f3f3" # selectierter Text Bsp: Einstellungen Überschrift
+  fg[INSENSITIVE]   = "#3e3e3e" # ausgegrauter Text Bsp: inaktive Filter, etc
+
+  bg[NORMAL]		= "#3e3e3e" # normaler Hintergrund
+  bg[PRELIGHT]		= "#545454" # Hintergrund mousover Bsp Buttons, Checkboxtext
+  bg[ACTIVE]		= "#545454" # gedrückter Button, aktiviertes Widget
+  bg[SELECTED]		= "#3369c0" # selektierter Hintergrund Bsp Einstellungen Überschrift
+  bg[INSENSITIVE]	= "#303030" # Bsp: inaktiver Button
+
+  base[NORMAL]		= "#606060" # Checkboxintergrund, Eingabehintergrund, Panelhintergrund
+  base[PRELIGHT]	= "#92b6f4" # Rahmen / Hintergrund Menuitems
+  base[ACTIVE]		= "#4c4c4c" # markierter Hintergrund ohne Focus, Bsp in Listen
+  base[SELECTED]	= "#3369c0" # Scrollbar Hintergrund, Tab-Reiter-Highlight, Menubar-Item-Hintergrund
+  base[INSENSITIVE]	= "#4c4c4c" # inaktiver Checkbox-Hintergrund, Panelhintergrund etc
+
+  text[NORMAL]		= "#f3f3f3" # normaler Text Reiter, Combo, Eingabe(s.u.), Checkmarker
+  text[PRELIGHT]	= "#f3f3f3" # mouseover Text Combo, Checkmarker
+  text[ACTIVE]		= "#c4c4c4" # markierter ohne Focus Text Bsp Listen
+  text[SELECTED]	= "#edf1f9" # markierter Text mit Focus
+  text[INSENSITIVE]	= "#3e3e3e" # ausgegrauter Text Comabo, Eingabe
+
+  engine "clearlooks" 
+  {
+    contrast = 1.0
+    sunkenmenubar = 1
+    menubarstyle      = 0       # 0 = flat, 1 = sunken, 2 = flat gradient
+    menuitemstyle     = 0       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
+    listviewitemstyle = 0       # 0 = flat, 1 = 3d-ish (gradient)
+    progressbarstyle  = 2       # 0 = candy bar, 1 = supercandy, 2 = flat
   }
-  bind "<ctrl>h" { "delete-from-cursor" (chars, -1) }
-  bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) }
 }
 
-#
-# Bindings for GtkTextView
-#
-binding "gtk-emacs-text-view"
+
+style "clearlooks-progressbar" = "clearlooks-default"
 {
-  bind "<ctrl>p" { "move-cursor" (display-lines, -1, 0) }
-  bind "<shift><ctrl>p" { "move-cursor" (display-lines, -1, 1) }
-  bind "<ctrl>n" { "move-cursor" (display-lines, 1, 0) }
-  bind "<shift><ctrl>n" { "move-cursor" (display-lines, 1, 1) }
-
-  bind "<ctrl>space" { "set-anchor" () }
-  bind "<ctrl>KP_Space" { "set-anchor" () }
+  xthickness = 1
+  ythickness = 1
 }
 
-#
-# Bindings for GtkTreeView
-#
-binding "gtk-emacs-tree-view"
+style "clearlooks-scrollbar" = "clearlooks-default"
 {
-  bind "<ctrl>s" { "start-interactive-search" () }
-  bind "<ctrl>f" { "move-cursor" (logical-positions, 1) }
-  bind "<ctrl>b" { "move-cursor" (logical-positions, -1) }
+  bg[NORMAL]		= "#484848" 
+  bg[PRELIGHT]		= "#545454" 
+#  bg[PRELIGHT]		= "#3369c0" 
 }
 
-#
-# Bindings for menus
-#
-binding "gtk-emacs-menu"
+
+style "clearlooks-wide" = "clearlooks-default"
 {
-  bind "<ctrl>n" { "move-current" (next) }
-  bind "<ctrl>p" { "move-current" (prev) }
-  bind "<ctrl>f" { "move-current" (child) }
-  bind "<ctrl>b" { "move-current" (parent) }
+  xthickness = 1
+  ythickness = 1
+  text[NORMAL]		= "#f3f3f3" # Bsp Eingabertext
+  base[NORMAL]		= "#606060" # Bsp Eingabehinterrund
 }
 
-class "GtkEntry" binding "gtk-emacs-text-entry"
-class "GtkTextView" binding "gtk-emacs-text-entry"
-class "GtkTextView" binding "gtk-emacs-text-view"
-class "GtkTreeView" binding "gtk-emacs-tree-view"
-class "GtkMenuShell" binding "gtk-emacs-menu"
+style "clearlooks-button" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL]		= "#484848" # normaler Hintergrund
+}
+
+style "clearlooks-notebook" = "clearlooks-wide"
+{
+  bg[NORMAL] = "#303030" # aktiver Tabhintergrund
+  bg[ACTIVE] = "#282828" # inaktiver Tabhinergrund
+}
+
+style "clearlooks-tasklist" = "clearlooks-default"
+{
+  xthickness = 4
+  ythickness = 2
+}
+
+style "clearlooks-menu" = "clearlooks-default"
+{
+  xthickness = 4
+  ythickness = 4
+  bg[NORMAL]		= "#303030" # MenuHintergrund
+}
+
+style "clearlooks-menu-item" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 3
+# base[SELECTED] = "#0050a1"
+}
+
+style "clearlooks-menubar" = "clearlooks-default"
+{
+  xthickness = 3
+  ythickness = 3
+  bg[NORMAL]		= "#303030" # MenuHintergrund
+}
+
+style "clearlooks-menu-itembar" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL]		= "#ff0000" # MenuHintergrund ??
+}
+
+style "clearlooks-tree" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "clearlooks-frame-title" = "clearlooks-default"
+{
+  fg[NORMAL] = "#b8b9bb" # ? bei Gimp 
+}
+
+style "clearlooks-panel" = "clearlooks-default"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "clearlooks-tooltips" = "clearlooks-default"
+{
+  xthickness = 4
+  ythickness = 4
+}
+
+style "clearlooks-combo" = "clearlooks-default"
+{
+  xthickness = 1
+  ythickness = 1
+}
+
+style "metacity-frame"
+{
+  # Normal base color
+  #bg[NORMAL]  = "#bbbbbb"
+
+  # Unfocused title background color
+  #bg[INSENSITIVE]  = { 0.8, 0.8, 0.8 }
+
+  # Unfocused title text color
+  #fg[INSENSITIVE]  = { 1.55, 1.55, 1.55 }
+
+  # Focused icon color
+  fg[NORMAL]  = "#b8b9bb" # ?
+
+  # Focused title background color
+  bg[SELECTED]  = "#0050a1" # ?
+
+  # Focused title text color
+  fg[SELECTED]  = "#28292b" # ?
+}
+
+style "gimp-display-style" = "gimp-default-style"
+{
+  GimpRuler::font-scale          = 0.6000
+  GimpUnitComboBox::label-scale  = 0.8333
+  GimpScaleComboBox::label-scale = 0.8333
+  GtkComboBox::arrow-size        = 6
+  GtkButton::inner-border        = { 0, 0, 0, 0 }
+  GtkButton::focus-line-width    = 0
+  GtkButton::focus-padding       = 0
+}
+
+class "GtkWidget" style "clearlooks-default"
+class "GtkButton" style "clearlooks-button"
+class "GtkRange" style "clearlooks-wide"
+class "GtkFrame" style "clearlooks-wide"
+class "GtkStatusbar" style "clearlooks-wide"
+class "GtkMenu" style "clearlooks-menu"
+class "GtkMenuItem" style "clearlooks-menu-item"
+widget_class "*MenuItem.*" style "clearlooks-menu-item"
+widget_class "*.GtkAccelMenuItem.*" style "clearlooks-menu-item"
+widget_class "*.GtkRadioMenuItem.*" style "clearlooks-menu-item"
+widget_class "*.GtkCheckMenuItem.*" style "clearlooks-menu-item"
+widget_class "*.GtkImageMenuItem.*" style "clearlooks-menu-item"
+widget_class "*.GtkSeparatorMenuItem.*" style "clearlooks-menu-item"
+class "GtkMenuBar" style "clearlooks-menubar"
+class "GtkEntry" style "clearlooks-wide"
+widget_class "*.tooltips.*.GtkToggleButton" style "clearlooks-tasklist"
+widget_class "*.GtkTreeView.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkCTree.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkList.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkCList.GtkButton" style "clearlooks-tree"
+widget_class "*.GtkFrame.GtkLabel" style "clearlooks-frame-title"
+widget_class "BasePWidget.GtkEventBox.GtkTable.GtkFrame" style "clearlooks-panel"
+widget "gtk-tooltips" style "clearlooks-tooltips"
+class "GtkNotebook" style "clearlooks-notebook"
+class "GtkProgressBar" style "clearlooks-progressbar"
+class "GtkScrollbar" style "clearlooks-scrollbar"
+widget_class "*.GtkComboBox.GtkButton" style "clearlooks-combo"
+widget_class "*.GtkCombo.GtkButton" style "clearlooks-combo"
+class "MetaFrames" style "metacity-frame"
