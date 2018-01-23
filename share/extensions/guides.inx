@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Author: ugajin **at** zoho.com
+# Date: June 22 - 24, 2016
+# v1.1
+-->
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>guides</_name>
+  <id>org.inkscape.guides</id>
+  <dependency type="executable" location="extensions">guides.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+
+
+  <param name="title 1" type="description" appearance="header">
+Target</param>
+  <param name="horGuides" type="int" min="0" max="1024" gui-text="Number of horizontal guides:">1</param>
+  <param name="verGuides" type="int" min="0" max="1024" gui-text="Number of vertical guides:">1</param>
+  <param name="delete_target_guides" type="boolean" _gui-text="Delete, then add target guides.">false</param>
+
+  <param name="title 2" type="description" appearance="header">
+Custom</param>
+  <param name="nSteps" type="int" min="1" max="1024" gui-text="Number of guides (steps):">1</param>
+
+  <param name="xPos" type="float" precision="3" min="-1048576.0" max="2097152.0" _gui-text="X axis (px):">0</param>
+  <param name="yPos" type="float" precision="3" min="-1048576.0" max="2097152.0" _gui-text="Y axis (px):">0</param>
+  <param name="angle" type="float" precision="3" min="-360.0" max="360.0" _gui-text="Slope (degrees):">0.0</param>
+
+  <param name="xStep" type="float" precision="3" min="-1048576.0" max="2097152.0" _gui-text="X axis step value (px):">0</param>
+  <param name="yStep" type="float" precision="3" min="-1048576.0" max="2097152.0" _gui-text="Y axis step value (px):">0</param>
+  <param name="rStep" type="float" precision="3" min="-360.0" max="360.0" _gui-text="Rotate step value (degrees):">0</param>
+  <param name="delete_custom_guides" type="boolean" _gui-text="Delete, then add custom guides.">false</param>
+
+  <param name="title 3" type="description" appearance="header">
+Vector/Normals</param>
+  <param name="rightGuide" type="boolean" _gui-text="Draw 'TR:BL' vector guide.">false</param>
+  <param name="rightGuideNormals" type="int" min="0" max="1024" gui-text="Number of normal guides:">§</param>
+  <param name="leftGuide" type="boolean" _gui-text="Draw 'TL:BR' vector guide.">false</param1
+  <param name="leftGuideNormals" type="int" min="0" max="1024" gui-text="Number of normal guides:">1</param>
+  <param name="delete_vector_guides" type="boolean" _gui-text="Delete, then add vector/normal guides.">false</param>
+
+  <param name="title 4" type="description" appearance="header">
+Mode</param>
+  <param name="myMode" type="optiongroup" _gui-text="Select option: ">
+    <option value="target_guides">Target guides</option>
+    <option value="custom_guides">Custom guides</option>
+    <option value="vector_guides">Vector guides</option>
+    <option value="remove_guides">Delete guides</option>
+  </param>
+
+
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="Custom"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">guides.py</command>
+  </script>
+</inkscape-extension>

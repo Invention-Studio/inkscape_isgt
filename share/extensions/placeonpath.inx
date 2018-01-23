@@ -1,0 +1,43 @@
+<inkscape-extension>
+  <_name>Place Objects On Path</_name>
+  <id>place.objectsonpath</id>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <dependency type="executable" location="extensions">placeonpath.py</dependency>
+  <dependency type="executable" location="extensions">simpletransformed.py</dependency>
+  <dependency type="executable" location="extensions">pathmodifier.py</dependency>
+  <dependency type="executable" location="extensions">cubicsuperpath.py</dependency>
+  <dependency type="executable" location="extensions">bezmisc.py</dependency>
+  <param name="tab" type="notebook">
+    <page name="placeonpath" _gui-text="Parameters">
+      <param name="detect" type="enum" _gui-text="Count objects from: ">
+        <item value="left">Left</item>
+        <item value="right">Right</item>
+        <item value="top">Top</item>
+        <item value="bottom">Bottom</item>
+      </param>
+      <param name="offset" type="float" min="0" max="1000000" _gui-text="Offset [px]:">0</param>
+      <param name="degree" type="float" min="-180" max="180" _gui-text="Rotation [deg]:">0</param>
+      <param name="orient" type="boolean" _gui-text="Orient to path">true</param>
+      <param name="placetext" type="boolean" _gui-text="Include text">true</param>
+    </page>
+    <page name="desc" _gui-text="About">
+      <_param name="aboutplaceoncurve" type="description">This extension places objects on a curve. 
+Curve is object that has lowest z-order and must be a path. Distances between objects remain the same as they were before placing. If objects can't be placed on the curve because of their distances they'll be left in places.
+
+Arrange distances between your objects manually first as curve position and direction. 
+
+Some bugs are present: objects can't orient to straight lines(?); clones not supported in recent Inkscape builds(?). No feedback ;)
+</_param>
+    </page>
+  </param>
+  <effect>
+    <object-type>all</object-type>
+      <effects-menu>
+        <submenu _name="Arrange"/>
+      </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">placeonpath.py</command>
+  </script>
+</inkscape-extension>
+
