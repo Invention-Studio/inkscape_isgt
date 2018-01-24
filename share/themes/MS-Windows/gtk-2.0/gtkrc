@@ -53,28 +53,31 @@ style "isgt_light"
   GimpUnitComboBox::appears-as-list = 0
 
   font_name = "DejaVu Sans 8"
+  #Todo
+
+
 
   fg[NORMAL]        = "#343434"  # normal text
   fg[PRELIGHT]      = "#303030"  # Text mouse-over
-  fg[ACTIVE]        = "#f1bd1b"  # activated text Ex: active checkbox text
+  fg[ACTIVE]        = "#1b3ff1"  # activated text Ex: active checkbox text
   fg[SELECTED]      = "#303030"  # selected text Ex: Settings heading ???
   fg[INSENSITIVE]   = "#343434"  # x,y,w,h up top
 
   bg[NORMAL]      = "#FFFFFF"    # normal background
-  bg[PRELIGHT]    = "#6f6f6f"    # Background mousover Eg buttons, checkbox text
-  bg[ACTIVE]      = "#aaaaaa"    # pressed button, activated widget, scrollbar bk
+  bg[PRELIGHT]    = "#f1bd1b"    # Background mousover Eg buttons, checkbox text
+  bg[ACTIVE]      = "#cccccc"    # pressed button, activated widget, scrollbar bk
   bg[SELECTED]    = "#f1bd1b"    # selected background Ex. Sliders, Opacity etc
   bg[INSENSITIVE] = "#eeeeee"    # Eg: inactive button, inactive snaps
 
-  base[NORMAL]      = "#343434"  # Checkbox background, ctrl + shift + p,
+  base[NORMAL]      = "#eeeeee"  # Checkbox background, ctrl + shift + p,
   base[PRELIGHT]    = "#ff0000"  # ???
-  base[ACTIVE]      = "#000000"  # marked background without focus, eg in lists
+  base[ACTIVE]      = "#343434"  # marked background without focus, eg in lists
   base[SELECTED]    = "#f1bd1b"  # ctrl + shift + p ???
-  base[INSENSITIVE] = "#555555"  # inactive checkbox background, W, H, Blur, Opacity, etc
+  base[INSENSITIVE] = "#cacaca"  # inactive checkbox background, W, H, Blur, Opacity, etc
   ####configured####
 
   #matched the main text section
-  text[NORMAL]      = "#aaaaaa"  # normal text tab, combo, input (s.u.), checkmarker
+  text[NORMAL]      = "#343434"  # normal text tab, combo, input (s.u.), checkmarker
   text[PRELIGHT]    = "#303030"  # mouseover text combo, checkmarker
   text[ACTIVE]      = "#f1bd1b"  # marked without focus text eg lists
   text[SELECTED]    = "#303030"  # marked text with focus
@@ -100,8 +103,8 @@ style "clearlooks-progressbar" = "isgt_light"
 
 style "clearlooks-scrollbar" = "isgt_light"
 {
-  bg[NORMAL]    = "#484848"
-  bg[PRELIGHT]    = "#545454"
+  bg[NORMAL]    = "#484848" #????
+  bg[PRELIGHT]    = "#545454" #????
 #  bg[PRELIGHT]   = "#3369c0"
 }
 
@@ -110,15 +113,15 @@ style "clearlooks-wide" = "isgt_light"
 {
   xthickness = 1
   ythickness = 1
-  text[NORMAL]    = "#f3f3f3" # Eg input text
-  base[NORMAL]    = "#606060" # Eg input input round
+  text[NORMAL]    = "#343434" # Eg input text
+  base[NORMAL]    = "#eeeeee" # active H,W,X,Y background
 }
 
 style "clearlooks-button" = "isgt_light"
 {
   xthickness = 2
   ythickness = 2
-  bg[NORMAL]    = "#484848" # normal background
+  bg[NORMAL]    = "#f5f5f5" # normal background
 }
 
 style "clearlooks-notebook" = "clearlooks-wide"
@@ -137,7 +140,7 @@ style "clearlooks-menu" = "isgt_light"
 {
   xthickness = 4
   ythickness = 4
-  bg[NORMAL]    = "#303030" # Menu background
+  bg[NORMAL]    = "#FFFFFF" # Menu background
 }
 
 style "clearlooks-menu-item" = "isgt_light"
@@ -151,14 +154,15 @@ style "clearlooks-menubar" = "isgt_light"
 {
   xthickness = 3
   ythickness = 3
-  bg[NORMAL]    = "#303030" # Menu background
+  fg[NORMAL]    = "#ff0000" # Eg input text
+  bg[NORMAL]    = "#ffffff" # Top Bar background
 }
 
 style "clearlooks-menu-itembar" = "isgt_light"
 {
   xthickness = 2
   ythickness = 2
-  bg[NORMAL]    = "#ff0000" # Menu background ??
+  bg[NORMAL]    = "#ff0000" #???
 }
 
 style "clearlooks-tree" = "isgt_light"
@@ -193,7 +197,7 @@ style "clearlooks-combo" = "isgt_light"
 style "metacity-frame"
 {
   # Normal base color
-  #bg[NORMAL]  = "#00ff00"
+  # bg[NORMAL]  = "#00ff00"
 
   # Unfocused title background color
   #bg[INSENSITIVE]  = { 0.8, 0.8, 0.8 }
@@ -202,13 +206,13 @@ style "metacity-frame"
   #fg[INSENSITIVE]  = { 1.55, 1.55, 1.55 }
 
   # Focused icon color
-  fg[NORMAL]  = "#b8b9bb" # ?
+  fg[NORMAL]  = "#b8b9bb" # ???
 
   # Focused title background color
-  bg[SELECTED]  = "#eeb211" # ?
+  bg[SELECTED]  = "#eeb211" # ???
 
   # Focused title text color
-  fg[SELECTED]  = "#28292b" # ?
+  fg[SELECTED]  = "#28292b" # ???
 }
 
 style "gimp-display-style" = "gimp-default-style"
