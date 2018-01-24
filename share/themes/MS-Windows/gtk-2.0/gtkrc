@@ -71,7 +71,7 @@ style "isgt_light"
 
   base[NORMAL]      = "#eeeeee"  # Checkbox background, ctrl + shift + p,
   base[PRELIGHT]    = "#ff0000"  # ???
-  base[ACTIVE]      = "#343434"  # marked background without focus, eg in lists
+  base[ACTIVE]      = "#cccccc"  # marked background without focus, eg in lists
   base[SELECTED]    = "#f1bd1b"  # ctrl + shift + p ???
   base[INSENSITIVE] = "#cacaca"  # inactive checkbox background, W, H, Blur, Opacity, etc
   ####configured####
@@ -79,7 +79,7 @@ style "isgt_light"
   #matched the main text section
   text[NORMAL]      = "#343434"  # normal text tab, combo, input (s.u.), checkmarker
   text[PRELIGHT]    = "#303030"  # mouseover text combo, checkmarker
-  text[ACTIVE]      = "#f1bd1b"  # marked without focus text eg lists
+  text[ACTIVE]      = "#000000"  # marked without focus text eg lists
   text[SELECTED]    = "#303030"  # marked text with focus
   text[INSENSITIVE] = "#3e3e3e"  # grayed out text comabo, input
 
